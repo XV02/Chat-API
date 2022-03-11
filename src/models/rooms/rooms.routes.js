@@ -10,7 +10,7 @@ router.put('/', controller.update);
 router.delete('/', controller.delete);
 
 router.post('/invitation', authRoute, controller.invite);
-// TO ACCEPT INVITATION router.put('/invitation/:id', authRoute, controller.invitation);
+router.post('/invitation/:id', authRoute, controller.acceptInvitation);
 
 
 module.exports = router;

@@ -34,10 +34,24 @@ const RoomsController = {
             req.body.room, 
             req.decoded._id)
         .then(result => {
-            res.send(result);
+            res.send({
+                "link": "localhost:3000/api/rooms/invitation/" + result.insertedId,
+            });
         })
         .catch(err =>{
             res.status(401).send(err);
+        });
+    },
+    acceptInvitation: (req, res) => {
+        const room = new Room();
+        room.acceptInvitation(
+            req.params.id,
+            req.decoded._id)
+        .then(result => {
+            res.send(result);
+        })
+        .catch(err =>{
+            res.status(400).send(err);
         });
     }
 }

@@ -11,7 +11,8 @@ class User extends BaseModel{
             name: name, 
             email: email, 
             password: password, 
-            role: role});
+            role: role
+        });
     }
 
     signIn(name, password){
