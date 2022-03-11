@@ -36,7 +36,28 @@ router.get('/:id', controller.getOne);
  * @swagger
  *  /api/users:
  *      post:
- *          description: Creates a new User
+ *          parameters:
+ *           - in: body
+ *             name: user
+ *             required: true
+ *             description: The user's information
+ *             schema: 
+ *              type: object
+ *              required:
+ *               - name
+ *               - email
+ *               - password
+ *               - role
+ *              properties:
+ *               name: 
+ *                type: string
+ *               email:
+ *                type: string
+ *               password:
+ *                type: string
+ *               role:
+ *                type: string
+ *          description: Creates a new User (Sign In)
  *          responses:
  *              200: 
  *                  description: Verification that went correctly
