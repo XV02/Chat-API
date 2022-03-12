@@ -1,3 +1,5 @@
+const Message = require("./message.model");
+
 const MessagesController = {
     getAll: (req, res) => {
         res.send('Will get messages');
@@ -6,7 +8,14 @@ const MessagesController = {
         res.send('Will get "' + req.params.id + '" message');
     },
     create: (req, res) => {
-        res.send('Will create message');
+        const message = new Message();
+        message.createMessage(
+            req.body.room,
+            req.decoded._id,
+            req.body.message)
+        .then(result => {
+            res.send(result);
+        });
     },
     update: (req, res) => {
         res.send('Will update message');
