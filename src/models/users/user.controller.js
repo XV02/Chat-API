@@ -23,6 +23,8 @@ const UsersController = {
             req.body.role)
         .then(result => {
             res.send(result);
+        }).catch(err => {
+            res.status(409).send(err);
         });
     },
     update: (req, res) => {
