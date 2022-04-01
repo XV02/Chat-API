@@ -42,7 +42,9 @@ const UsersController = {
                 const token = jwt.sign(result, process.env.KEY, {
                     expiresIn: '24h'
                 });
-                res.send(token);
+                res.send({
+                    token: token,
+                });
             }
             else{
                 res.status(404).send({
