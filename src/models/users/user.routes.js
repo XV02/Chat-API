@@ -57,7 +57,7 @@ router.get('/:id', controller.getOne);
  *                type: string
  *               role:
  *                type: string
- *          description: Creates a new User (Sign In)
+ *          description: Creates a new User (Sign Up)
  *          responses:
  *              200: 
  *                  description: Verification that went correctly

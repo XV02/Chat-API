@@ -45,7 +45,9 @@ const UsersController = {
                 res.send(token);
             }
             else{
-                res.status(404).send('User or password incorrect');
+                res.status(404).send({
+                    error: 'User or password incorrect',
+                });
             }
         });
     },
